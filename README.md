@@ -7,13 +7,13 @@ Leia o documento de especificação contido em [Especificação do Trabalho 1](h
 
 # Como compilar
 
-No terminal/promp de comando:
-1 - Abra o terminal na pasta build
-2 - Digite: 
-g++ ../src/main.cpp -o keno
+No terminal/promp de comando:</br>
+1 - Abra o terminal na pasta build </br>
+2 - Digite: </br>
+g++ ../src/main.cpp -o keno </br>
 
 # Como executar
 
-No terminal/promp de comando:
+No terminal/promp de comando:</br>
 1 - Com o terminal na pasta build digite: 
-/keno /data/bet_12stpors.dat
+/keno /data/bet_12stpors.dat</br>
