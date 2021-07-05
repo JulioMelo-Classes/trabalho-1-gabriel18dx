@@ -63,12 +63,10 @@ bool contentValidation(char *argv[]){
     // pegamos a primeira linha
     getline(file, texto, '\n');
     cash = stof(texto);
-    cout<<cash<<endl;
 
     // agora a segunda
     getline(file, texto, '\n');
     rounds = stoi(texto);
-    cout<<rounds<<endl;
 
     // caso sejam nulos significa que não eram float e int respectivamente, os valores nas linhas
     if(!rounds || !cash){
@@ -80,7 +78,6 @@ bool contentValidation(char *argv[]){
     while(file>>texto){
         int x = stoi(texto);
         apostas.push_back(x);
-        cout<<x<<endl;
         // mesmo caso anterior
         if(!x){
             cout<<"O arquivo possui um valor incorreto para nosso formato, por favor conserte para prosseguir a aposta."<<endl;

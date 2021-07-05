@@ -1,11 +1,13 @@
 #ifndef Aposta_hpp
 #define Aposta_hpp
 
+#include <vector>
+
 class Aposta{
     private:
         float credits;
         int rounds;
-        int* nums;
+        std::vector<int> nums;
         bool validade;
 
     public:
