@@ -9,8 +9,8 @@ Leia o documento de especificação contido em [Especificação do Trabalho 1](h
 
 <b>No terminal/promp de comando:</b>
 <ol>
-    <li>Abra o terminal na pasta build </li>
-    <li>Digite: </br> cmake --build . </li>
+    <li>Abra o terminal na pasta build</li>
+    <li>Digite: </br> cmake --build .</li>
 </ol>
 
 # Como executar
