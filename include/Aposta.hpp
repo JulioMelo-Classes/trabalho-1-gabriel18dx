@@ -10,6 +10,7 @@ class Aposta{
 
     public:
         Aposta(int argc, char *argv[]);
+        void play();
 };
 
 

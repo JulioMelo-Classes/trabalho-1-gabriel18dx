@@ -6,3 +6,7 @@ using namespace std;
 Aposta::Aposta(int argc, char *argv[]){
     validarAposta(argc, argv, &validade);
 }
+
+void Aposta::Play(){
+    
+}
