@@ -17,5 +17,5 @@ Leia o documento de especificação contido em [Especificação do Trabalho 1](h
 
 <b>No terminal/promp de comando:</b> 
 <ol>
-    <li>Com o terminal na pasta build digite:</br> ./keno ../data/bet_12stpors.dat</li>
+    <li>Com o terminal na pasta build digite:</br> ./keno ../data/bet_12stpors.dat<span></br><b>OBS.:<b> caso queira, substitua ../data/bet_12stpors.dat pelo arquivo de aposta de preferência.</span></li>
 </ol>

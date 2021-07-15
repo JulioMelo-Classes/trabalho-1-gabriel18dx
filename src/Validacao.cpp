@@ -62,27 +62,29 @@ bool contentValidation(char *argv[]){
 
     // pegamos a primeira linha
     getline(file, texto, '\n');
-    cash = stof(texto);
+    if(!isFloat(texto))
+        return false;
+    cash = stof("0"+texto);
+
+    
+
 
     // agora a segunda
     getline(file, texto, '\n');
-    rounds = stoi(texto);
-
-    // caso sejam nulos significa que não eram float e int respectivamente, os valores nas linhas
-    if(!rounds || !cash){
-        cout<<"O arquivo possui um valor incorreto para nosso formato, por favor conserte para prosseguir a aposta."<<endl;
+    if(!isInt(texto))
         return false;
-    }
+    rounds = stoi("0"+texto);
+
+
+
 
     // se está tudo ok com as linhas podemos pegar 1 a 1 possível inteiro da 3ª linha
     while(file>>texto){
-        int x = stoi(texto);
-        apostas.push_back(x);
-        // mesmo caso anterior
-        if(!x){
-            cout<<"O arquivo possui um valor incorreto para nosso formato, por favor conserte para prosseguir a aposta."<<endl;
+        if(!isInt(texto))
             return false;
-        }
+        int x = stoi(texto);
+        //cout<<x<<endl;
+        apostas.push_back(x);
     }
 
     file.close();
@@ -92,7 +94,40 @@ bool contentValidation(char *argv[]){
         cout<<"Insira apenas 15 números na linha de aposta por favor."<<endl;
         return false;
     }
-
     
+    return true;
+}
+
+bool isInt(string texto){
+    // checar cada char da string, caso nao seja numero ele retorna false
+    for(int i=0; i<texto.size(); i++){
+        //cout<<texto[i]<<endl;
+        if(texto[i]<'0' || texto[i]>'9'){
+            cout<<"O arquivo possui um valor incorreto para nosso formato, por favor conserte para prosseguir a aposta."<<endl;
+            return false;
+        }
+    }
+    return true;
+}
+
+bool isFloat(string texto){
+    // checar cada char da string, caso nao seja numero ele retorna false
+    int pointCount = 0;
+    for(int i=0; i<texto.size(); i++){
+        //cout<<texto[i]<<endl;
+        if(texto[i]<'0' || texto[i]>'9'){
+            if(texto[i] == '.'){
+                pointCount++;
+                if(pointCount > 1){
+                    cout<<"O arquivo possui um valor incorreto para nosso formato, por favor conserte para prosseguir a aposta."<<endl;
+                    return false;
+                }
+            }
+            else{
+                cout<<"O arquivo possui um valor incorreto para nosso formato, por favor conserte para prosseguir a aposta."<<endl;
+                return false;
+            }
+        }
+    }
     return true;
 }
